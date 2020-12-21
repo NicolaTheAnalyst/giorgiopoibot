@@ -2,9 +2,9 @@ FROM python:3.7-alpine
 COPY requirements.txt /tmp
 RUN apk add --no-cache \
         libressl-dev \
-		gcc \
-		python3-dev \
-		openssl-dev \
+	gcc \
+	python3-dev \
+	openssl-dev \
         musl-dev \
         libffi-dev && \
     pip install --no-cache-dir cryptography==2.1.4 && \
