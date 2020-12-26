@@ -51,6 +51,7 @@ def bot():
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
 
+    dispatcher.add_handler(CommandHandler("start", aiuto))
     dispatcher.add_handler(CommandHandler("aiuto", aiuto))
     dispatcher.add_handler(CommandHandler("about", about))
     #let's allow some variation
