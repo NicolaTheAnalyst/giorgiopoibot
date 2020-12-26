@@ -7,7 +7,7 @@ RUN apk add --no-cache \
 		openssl-dev \
         musl-dev \
         libffi-dev && \
-    pip install --no-cache-dir cryptography==2.1.4 && \
+    pip install --no-cache-dir cryptography==2.3 && \
     apk del \
         libressl-dev \
         musl-dev \
