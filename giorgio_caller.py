@@ -50,7 +50,10 @@ def table_update(id,title,url):
         msg = e
         send_email(status, msg)
 
-    logger.info("Record inserted successfully into SqliteDb_developers table ", cursor.rowcount)
+    try:
+        logger.info("Record inserted successfully into SqliteDb_developers table ", cursor.rowcount)
+    except:
+        pass
     cursor.close()
     status = "OK"
     msg = "OK."
