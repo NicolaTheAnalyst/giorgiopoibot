@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+from datetime import datetime
 import yagmail
 import logging
 import sqlite3
@@ -15,9 +16,11 @@ receiver_email = os.environ.get("receiver_mail")
 yag = yagmail.SMTP(sender_email, oauth2_file='oauth2_creds.json')
 
 def send_email(status, msg):
+    dt = datetime.now()
     subject = "Giorgio Poi caller log: {status}".format(status = status)
     body = """Esito: {text}
-    """.format(text = msg)
+    Email generated: {dt}
+    """.format(text = msg, dt = dt)
     yag.send(to=receiver_email,subject = subject,contents = body)
     return
 
