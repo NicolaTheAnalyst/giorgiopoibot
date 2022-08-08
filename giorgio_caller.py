@@ -44,7 +44,7 @@ def table_update(id,title,url):
                                    VALUES 
                                   ("Giorgio Poi", "{title}", "{url}") 
                                   """.format(title = title[element], url = url[element])
-            print(sqlite_insert_query)
+            #print(sqlite_insert_query)
             count = cursor.execute(sqlite_insert_query)
             sqliteConnection.commit()
     except Exception as e:
