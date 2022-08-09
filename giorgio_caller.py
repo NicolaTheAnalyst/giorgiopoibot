@@ -75,7 +75,7 @@ def main():
     youtube = googleapiclient.discovery.build(api_service_name,api_version, developerKey = api_key)
 
     logger.info("Calling youtube..")
-    try:
+    try: #calling youtube
         request = youtube.search().list(
             part="snippet",
             channelId="UCNGqOnZoBRKPp51xOmXDCRQ", #https://www.youtube.com/channel/UCNGqOnZoBRKPp51xOmXDCRQ Giorgio poi tema
@@ -91,11 +91,11 @@ def main():
 
     logger.info("Cycling on the response")
     try:
-        for i in response['items']:
+        for i in response['items']: #get info from the response
             id_number += 1
             id.append(id_number)
-            title.append(str(i['snippet']['title']))
-            url.append(youtube_prefix + str(i['id']['videoId']))
+            title.append(str(i['snippet']['title'])) #get the title
+            url.append(youtube_prefix + str(i['id']['videoId'])) #get and compose the URL: "https://www.youtube.com/watch?v=" + videoId
     except Exception as e:
         logger.error("Error while cycling on the response", exc_info=True)
         status = "KO"
