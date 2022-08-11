@@ -6,6 +6,7 @@
 sequenceDiagram
     participant telegram
     participant giorgiopoibot
+    participant database
     telegram->>giorgiopoibot: /giorgiopls
     giorgiopoibot->>database: SELECT * from Songs
     giorgiopoibot->>giorgiopoibot: generate random_id
@@ -14,6 +15,17 @@ sequenceDiagram
     giorgiopoibot->>telegram: send song url
 ```
 
+## Giorgiocaller: diagramma di sequenza
+```mermaid
+sequenceDiagram
+    participant database
+    participant giorgiocaller
+    participant youtube
+    giorgiocaller->>youtube: get request (songs from channel)
+    youtube->>giorgiocaller: response
+    giorgiocaller->>giorgiocaller: elaborate data
+    giorgiocaller->>database: INSERT OR REPLACE INTO Songs
+```
 
 ## to-do:
 * ~~Renderlo scalabile (appoggiarsi alle API di youtube?)~~: fatto
