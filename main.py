@@ -2,6 +2,7 @@ import sqlite3
 import random
 import os
 import logging
+# noinspection PyUnresolvedReferences
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
@@ -9,6 +10,7 @@ TOKEN = os.environ.get('TOKEN')
 
 logging.basicConfig(filename='loggiorgio.txt', format= "%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 logger = logging.getLogger()
+
 
 def giorgiopls(update: Update, context: CallbackContext) -> None:
     try:
