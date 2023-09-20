@@ -45,7 +45,7 @@ def aiuto(update, context):
     update.message.reply_text("I comandi possibili sono: \n /giorgiopls per una canzone random \n /about per info su questo bot \n /aiuto per la lista dei comandi")
 
 def about(update, context):
-    update.message.reply_text("Fatto con amore da flyingwonton, https://github.com/flyingwonton/giorgiopoibot")
+    update.message.reply_text("Fatto con amore da NicolaTheAnalyst, https://github.com/NicolaTheAnalyst/giorgiopoibot")
 
 def bot():
     #"""Start the bot."""
