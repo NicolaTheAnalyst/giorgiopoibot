@@ -1,4 +1,4 @@
-FROM python:3.11-slim-bookworm
+FROM python:3.10.0-alpine
 COPY requirements.txt /tmp
 WORKDIR /code
 COPY main.py /code/
