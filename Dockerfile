@@ -1,4 +1,4 @@
-FROM python:3.11-slim-bookworm
+FROM python:3.9-slim-buster
 COPY requirements.txt /tmp
 RUN pip3 install -r /tmp/requirements.txt
 WORKDIR /code
