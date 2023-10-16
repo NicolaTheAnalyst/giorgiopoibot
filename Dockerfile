@@ -1,4 +1,4 @@
-FROM python:3.10.0-alpine
+FROM python:3.9-slim-buster
 COPY requirements.txt /tmp
 WORKDIR /code
 COPY main.py /code/
